@@ -8,13 +8,13 @@ export default function Item({itemObj, index}){
     const {title,text}= itemObj;
 
     return (
-        <div className="item">
+        <div className={isShowing? 'item open':'item closed'} >
             <p className="number">0{Number}</p>
-            <p className="title">{title}</p>
-            <p className="icon">-</p>
+            <p className="title" onClick={handleToggleDisplay}>{title}</p>
+            <p className="icon">{isShowing?'-':'+'}</p>
             
             <div className="content-box">
-            <p >{text}</p>
+            <p className="text">{isShowing? text : ''}</p>
 
             </div>
         </div>
